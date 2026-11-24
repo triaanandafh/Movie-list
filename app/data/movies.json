@@ -1,0 +1,200 @@
+
+[
+  {
+    "id": 1,
+    "title": "Dune: Part Two",
+    "type": "Movie",
+    "year": 2024,
+    "rating": 8.5,
+    "genre": [
+      "Sci-Fi",
+      "Action"
+    ],
+    "overview": "Paul Atreides unites with the Fremen while seeking revenge against the conspirators who destroyed his family, facing a choice between love and the fate of the universe.",
+    "duration": "2h 46m",
+    "director": "Denis Villeneuve",
+    "cast": [
+      "Timothée Chalamet",
+      "Zendaya",
+      "Rebecca Ferguson",
+      "Austin Butler"
+    ],
+    "posterUrl": "/dune2.jpg",
+    "backdropUrl": "/dune2.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Oppenheimer",
+    "type": "Movie",
+    "year": 2023,
+    "rating": 8.3,
+    "genre": [
+      "Drama"
+    ],
+    "overview": "The story of J. Robert Oppenheimer and the race to build the atomic bomb, told through the moral cost of genius.",
+    "duration": "3h 0m",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Cillian Murphy",
+      "Emily Blunt",
+      "Robert Downey Jr.",
+      "Florence Pugh"
+    ],
+    "posterUrl": "/__l5e/assets-v1/2e126735-aaaa-4a27-bf76-4494beea1367/oppenheimer.jpg",
+    "backdropUrl": "/__l5e/assets-v1/2e126735-aaaa-4a27-bf76-4494beea1367/oppenheimer.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Spider-Man: Across the Spider-Verse",
+    "type": "Movie",
+    "year": 2023,
+    "rating": 8.6,
+    "genre": [
+      "Animation",
+      "Action"
+    ],
+    "overview": "Miles Morales is catapulted across the Multiverse, where he meets a team of Spider-People charged with protecting its very existence.",
+    "duration": "2h 20m",
+    "director": "Joaquim Dos Santos",
+    "cast": [
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Oscar Isaac",
+      "Jake Johnson"
+    ],
+    "posterUrl": "/__l5e/assets-v1/29663449-45ab-4113-909c-5ecdb0c751c5/spiderverse.jpg",
+    "backdropUrl": "/__l5e/assets-v1/29663449-45ab-4113-909c-5ecdb0c751c5/spiderverse.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Inside Out 2",
+    "type": "Movie",
+    "year": 2024,
+    "rating": 7.6,
+    "genre": [
+      "Animation",
+      "Drama"
+    ],
+    "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for new emotions, led by Anxiety.",
+    "duration": "1h 36m",
+    "director": "Kelsey Mann",
+    "cast": [
+      "Amy Poehler",
+      "Maya Hawke",
+      "Kensington Tallman",
+      "Liza Lapira"
+    ],
+    "posterUrl": "/__l5e/assets-v1/971437eb-4c72-457c-aa8e-83186d47a25b/inside-out-2.jpg",
+    "backdropUrl": "/__l5e/assets-v1/971437eb-4c72-457c-aa8e-83186d47a25b/inside-out-2.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Batman",
+    "type": "Movie",
+    "year": 2022,
+    "rating": 7.8,
+    "genre": [
+      "Action",
+      "Drama"
+    ],
+    "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City while pursuing the Riddler, a serial killer targeting the elite.",
+    "duration": "2h 56m",
+    "director": "Matt Reeves",
+    "cast": [
+      "Robert Pattinson",
+      "Zoë Kravitz",
+      "Paul Dano",
+      "Colin Farrell"
+    ],
+    "posterUrl": "/__l5e/assets-v1/26636d02-6ffb-4d8b-9372-8b77ab132f09/batman.jpg",
+    "backdropUrl": "/__l5e/assets-v1/26636d02-6ffb-4d8b-9372-8b77ab132f09/batman.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Interstellar",
+    "type": "Movie",
+    "year": 2014,
+    "rating": 8.7,
+    "genre": [
+      "Sci-Fi",
+      "Drama"
+    ],
+    "overview": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival.",
+    "duration": "2h 49m",
+    "director": "Christopher Nolan",
+    "cast": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Jessica Chastain",
+      "Michael Caine"
+    ],
+    "posterUrl": "/__l5e/assets-v1/5390539b-383f-4bde-bcab-0a1d243550b0/interstellar.jpg",
+    "backdropUrl": "/__l5e/assets-v1/5390539b-383f-4bde-bcab-0a1d243550b0/interstellar.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Stranger Things",
+    "type": "Series",
+    "year": 2016,
+    "rating": 8.7,
+    "genre": [
+      "Sci-Fi",
+      "Drama"
+    ],
+    "overview": "When a young boy vanishes, a small town uncovers secret experiments, terrifying supernatural forces and one strange little girl.",
+    "duration": "4 seasons",
+    "director": "The Duffer Brothers",
+    "cast": [
+      "Millie Bobby Brown",
+      "Finn Wolfhard",
+      "Winona Ryder",
+      "David Harbour"
+    ],
+    "posterUrl": "/__l5e/assets-v1/d5715369-98b1-405c-b7bf-1016cbdb1f6f/stranger-things.jpg",
+    "backdropUrl": "/__l5e/assets-v1/d5715369-98b1-405c-b7bf-1016cbdb1f6f/stranger-things.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Arcane",
+    "type": "Series",
+    "year": 2021,
+    "rating": 9.0,
+    "genre": [
+      "Animation",
+      "Action"
+    ],
+    "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies.",
+    "duration": "2 seasons",
+    "director": "Pascal Charrue & Arnaud Delord",
+    "cast": [
+      "Hailee Steinfeld",
+      "Ella Purnell",
+      "Kevin Alejandro",
+      "Katie Leung"
+    ],
+    "posterUrl": "/__l5e/assets-v1/b2f79c6e-acc8-4d94-a47d-aa5089ed1e7f/arcane.jpg",
+    "backdropUrl": "/__l5e/assets-v1/b2f79c6e-acc8-4d94-a47d-aa5089ed1e7f/arcane.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Last of Us",
+    "type": "Series",
+    "year": 2023,
+    "rating": 8.7,
+    "genre": [
+      "Drama",
+      "Action"
+    ],
+    "overview": "Twenty years after modern civilization collapses, Joel is hired to smuggle Ellie out of a quarantine zone on a brutal journey across America.",
+    "duration": "2 seasons",
+    "director": "Craig Mazin & Neil Druckmann",
+    "cast": [
+      "Pedro Pascal",
+      "Bella Ramsey",
+      "Gabriel Luna",
+      "Nick Offerman"
+    ],
+    "posterUrl": "/__l5e/assets-v1/b0f252fe-8b89-41f5-97f7-1571d9741788/the-last-of-us.jpg",
+    "backdropUrl": "/__l5e/assets-v1/b0f252fe-8b89-41f5-97f7-1571d9741788/the-last-of-us.jpg"
+  }
+]
