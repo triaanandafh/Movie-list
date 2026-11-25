@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Star, Clock3, Film, Plus, X } from "lucide-react";
+import { Star, Clock3, Film, Plus, X, Check } from "lucide-react";
 import { Movie } from "./HeroBanner";
 
 interface MovieModalProps {
   movie: Movie | null;
   onClose: () => void;
+  inWatchlist: boolean;
+  onToggleWatchlist: (m: Movie) => void;
 }
 
-export default function MovieModal({ movie, onClose }: MovieModalProps) {
+export default function MovieModal({ movie, onClose, inWatchlist, onToggleWatchlist }: MovieModalProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -109,11 +111,24 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
             </div>
           </div>
 
+          {/* Dynamic Button Add / Remove */}
           <button
-            onClick={onClose}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 py-3 text-sm font-semibold text-white transition-all hover:bg-purple-500 active:scale-98"
+            onClick={() => onToggleWatchlist(movie)}
+            className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold text-white transition-all ${
+              inWatchlist
+                ? "bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/20"
+                : "bg-purple-600 hover:bg-purple-500 shadow-lg shadow-purple-600/20"
+            }`}
           >
-            <Plus className="h-4 w-4" /> Add to Watch List
+            {inWatchlist ? (
+              <>
+                <Check className="h-4 w-4" /> Added to Watchlist
+              </>
+            ) : (
+              <>
+                <Plus className="h-4 w-4" /> Add to Watchlist
+              </>
+            )}
           </button>
         </div>
       </section>

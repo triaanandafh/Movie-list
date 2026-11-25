@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import gsap from "gsap";
 import { Search, ArrowRight, Clapperboard } from "lucide-react";
+import Image from "next/image";
 
 import Navbar from "./components/Navbar";
 import HeroBanner, { Movie } from "./components/HeroBanner";
@@ -19,25 +20,34 @@ export default function Home() {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
+  const [watchlistIds, setWatchlistIds] = useState<(string | number)[]>([]);
+  const [activeTab, setActiveTab] = useState<"discover" | "my-list">("discover");
 
   const gridRef = useRef<HTMLDivElement>(null);
-  // const movies = moviesData as unknown as Movie[];
+  useEffect(() => {
+    const saved = localStorage.getItem("watchlist");
+    if (saved) {
+      try {
+        setWatchlistIds(JSON.parse(saved));
+      } catch (e) {
+        console.error("Failed to parse watchlist", e);
+      }
+    }
+  }, []);
 
   useEffect(() => {
   async function loadData() {
     setLoading(true);
     const apiMovies = await fetchTrendingMovies();
     
-    // Fallback: Jika API error / key belum dipasang, pakai movies.json lokal
+    // Fallback
     if (apiMovies.length > 0) {
       setMovies(apiMovies);
     } else {
       setMovies(moviesData as unknown as Movie[]);
     }
-    
     setLoading(false);
   }
-  
   loadData();
 }, []);
 
@@ -53,7 +63,43 @@ export default function Home() {
     });
   }, [query, category, movies]);
 
-  // Animasi GSAP untuk Cards
+  const scrollToCollection = () => {
+  setActiveTab("discover");
+  setTimeout(() => {
+    document.getElementById("collection")?.scrollIntoView({ behavior: "smooth" });
+  }, 100);
+};
+
+  const toggleWatchlist = (movie: Movie) => {
+  setWatchlistIds((prev) => {
+    const exists = prev.includes(movie.id);
+    const next = exists
+      ? prev.filter((id) => id !== movie.id)
+      : [...prev, movie.id];
+    localStorage.setItem("watchlist", JSON.stringify(next));
+    return next;
+  });
+};
+
+      const displayedMovies = useMemo(() => {
+      let sourceMovies = movies;
+
+      if (activeTab === "my-list") {
+        sourceMovies = movies.filter((movie) => watchlistIds.includes(movie.id));
+      }
+
+      // Filter berdasarkan search query & kategori genre
+      return sourceMovies.filter((movie) => {
+        const matchesQuery = `${movie.title} ${movie.genre.join(" ")} ${movie.type}`
+          .toLowerCase()
+          .includes(query.toLowerCase());
+        const matchesCategory =
+          category === "All titles" || movie.genre.includes(category);
+        return matchesQuery && matchesCategory;
+      });
+    }, [query, category, movies, activeTab, watchlistIds]);
+
+     // Animasi GSAP untuk Cards
   useEffect(() => {
     if (loading || !gridRef.current) return;
     const cards = gridRef.current.querySelectorAll(".movie-card");
@@ -69,37 +115,42 @@ export default function Home() {
         overwrite: true,
       }
     );
-  }, [loading, filtered]);
+  }, [loading, displayedMovies, activeTab]);
 
    const featuredMovie = movies[0] || (moviesData[0] as Movie);
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
+      <Navbar 
+        activeTab={activeTab} 
+        onTabChange={(tab) => setActiveTab(tab)} 
+      />
+      {activeTab === "discover" && (
       <HeroBanner 
         movie={featuredMovie} 
         onSelect={(movie) => setSelectedMovie(movie)} 
-      />
+        onBrowse={scrollToCollection} 
+  />
+      )}
       
-      <section id="collection" className="mx-auto max-w-7xl px-6 py-12">
+      <section id="collection" className={`mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 ${activeTab === "my-list" ? "pt-12" : "py-12"}`}>
         {/* Section Heading */}
         <div className="mb-8 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-purple-400 mb-1">
-              <span className="h-px w-6 bg-purple-500" />
-              <span>CURATED FOR YOUR NEXT WATCH</span>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-semibold text-purple-300 backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-purple-400 animate-pulse" />
+              <span className="tracking-wider uppercase">
+                 {activeTab === "discover" ? "FIND YOUR NEXT WATCH" : "YOUR SAVED COLLECTION"}
+              </span>
             </div>
             <h2 className="text-3xl font-extrabold text-white">
-              Your watchlist<span className="text-purple-500">.</span>
+              {activeTab === "discover" ? (
+                <>Explore Collection<span className="text-purple-500">.</span></>
+              ) : (
+                <>My Watchlist <span className="text-purple-500">.</span></>
+              )}
             </h2>
           </div>
-          {/* <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-400">
-            <span className="text-white font-bold">
-              {filtered.length.toString().padStart(2, "0")}
-            </span>
-            <span>titles to explore</span>
-            <ArrowRight className="h-3.5 w-3.5 text-purple-400" />
-          </div> */}
         </div>
 
         {/* Search & Filter Component */}
@@ -117,12 +168,12 @@ export default function Home() {
               <SkeletonCard key={i} />
             ))}
           </div>
-        ) : filtered.length ? (
+        ) : displayedMovies.length ? (
           <div
             ref={gridRef}
             className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4"
           >
-            {filtered.map((movie) => (
+            {displayedMovies.map((movie) => (
               <MovieCard key={movie.id} movie={movie} onOpen={setSelectedMovie} />
             ))}
           </div>
@@ -153,18 +204,25 @@ export default function Home() {
       <footer className="border-t border-white/10 bg-slate-950 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row text-xs text-slate-500">
           <a href="#top" className="flex items-center gap-2 text-white font-bold">
-            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-purple-500/20 text-purple-400">
-              <Clapperboard size={14} />
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 transition-colors group-hover:border-purple-500/40 group-hover:bg-purple-500/20">
+                <Image src="/logo1.png" alt="Cinématique Logo" width={40} height={40} />
+             </span>
+            <span className="text-xl font-bold tracking-tight text-white">
+                watch<span className="text-purple-400">List</span>
             </span>
-            <span>ciné<span className="text-purple-400">matique</span></span>
           </a>
           <span>A little more cinema in your everyday.</span>
-          <span>© 2026 movieList</span>
+          <span>© 2026 watchList</span>
         </div>
       </footer>
 
       {/* Modal Detail Film */}
-      <MovieModal movie={selectedMovie} onClose={() => setSelectedMovie(null)} />
+      <MovieModal 
+      movie={selectedMovie} 
+      onClose={() => setSelectedMovie(null)} 
+      inWatchlist={selectedMovie ? watchlistIds.includes(selectedMovie.id) : false}
+      onToggleWatchlist={toggleWatchlist} 
+    />
     </main>
   );
 }

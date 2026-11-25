@@ -44,7 +44,7 @@ export default function MovieCard({ movie, onOpen }: MovieCardProps) {
       </div>
 
       {/* Info Bottom */}
-      <div className="mt-3 flex flex-col gap-1 px-1">
+      <div className="mt-3 flex flex-col gap-1 px-1 mb-5">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold text-white group-hover:text-purple-400 transition-colors line-clamp-1">
             {movie.title}
