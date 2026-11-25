@@ -40,8 +40,8 @@
       "Robert Downey Jr.",
       "Florence Pugh"
     ],
-    "posterUrl": "/__l5e/assets-v1/2e126735-aaaa-4a27-bf76-4494beea1367/oppenheimer.jpg",
-    "backdropUrl": "/__l5e/assets-v1/2e126735-aaaa-4a27-bf76-4494beea1367/oppenheimer.jpg"
+    "posterUrl": "/oppenheimer.jpg",
+    "backdropUrl": "/oppenheimer.jpg"
   },
   {
     "id": 3,
@@ -62,8 +62,8 @@
       "Oscar Isaac",
       "Jake Johnson"
     ],
-    "posterUrl": "/__l5e/assets-v1/29663449-45ab-4113-909c-5ecdb0c751c5/spiderverse.jpg",
-    "backdropUrl": "/__l5e/assets-v1/29663449-45ab-4113-909c-5ecdb0c751c5/spiderverse.jpg"
+    "posterUrl": "/spiderverse.jpg",
+    "backdropUrl": "/spiderverse.jpg"
   },
   {
     "id": 4,
@@ -84,8 +84,8 @@
       "Kensington Tallman",
       "Liza Lapira"
     ],
-    "posterUrl": "/__l5e/assets-v1/971437eb-4c72-457c-aa8e-83186d47a25b/inside-out-2.jpg",
-    "backdropUrl": "/__l5e/assets-v1/971437eb-4c72-457c-aa8e-83186d47a25b/inside-out-2.jpg"
+    "posterUrl": "/inside-out-2.jpg",
+    "backdropUrl": "/inside-out-2.jpg"
   },
   {
     "id": 5,
@@ -106,8 +106,8 @@
       "Paul Dano",
       "Colin Farrell"
     ],
-    "posterUrl": "/__l5e/assets-v1/26636d02-6ffb-4d8b-9372-8b77ab132f09/batman.jpg",
-    "backdropUrl": "/__l5e/assets-v1/26636d02-6ffb-4d8b-9372-8b77ab132f09/batman.jpg"
+    "posterUrl": "/batman.jpg",
+    "backdropUrl": "/batman.jpg"
   },
   {
     "id": 6,
@@ -128,8 +128,8 @@
       "Jessica Chastain",
       "Michael Caine"
     ],
-    "posterUrl": "/__l5e/assets-v1/5390539b-383f-4bde-bcab-0a1d243550b0/interstellar.jpg",
-    "backdropUrl": "/__l5e/assets-v1/5390539b-383f-4bde-bcab-0a1d243550b0/interstellar.jpg"
+    "posterUrl": "/interstellar.jpg",
+    "backdropUrl": "/interstellar.jpg"
   },
   {
     "id": 7,
@@ -150,8 +150,8 @@
       "Winona Ryder",
       "David Harbour"
     ],
-    "posterUrl": "/__l5e/assets-v1/d5715369-98b1-405c-b7bf-1016cbdb1f6f/stranger-things.jpg",
-    "backdropUrl": "/__l5e/assets-v1/d5715369-98b1-405c-b7bf-1016cbdb1f6f/stranger-things.jpg"
+    "posterUrl": "/stranger-things.jpg",
+    "backdropUrl": "/stranger-things.jpg"
   },
   {
     "id": 8,
@@ -172,8 +172,8 @@
       "Kevin Alejandro",
       "Katie Leung"
     ],
-    "posterUrl": "/__l5e/assets-v1/b2f79c6e-acc8-4d94-a47d-aa5089ed1e7f/arcane.jpg",
-    "backdropUrl": "/__l5e/assets-v1/b2f79c6e-acc8-4d94-a47d-aa5089ed1e7f/arcane.jpg"
+    "posterUrl": "/arcane.jpg",
+    "backdropUrl": "/arcane.jpg"
   },
   {
     "id": 9,
@@ -194,7 +194,7 @@
       "Gabriel Luna",
       "Nick Offerman"
     ],
-    "posterUrl": "/__l5e/assets-v1/b0f252fe-8b89-41f5-97f7-1571d9741788/the-last-of-us.jpg",
-    "backdropUrl": "/__l5e/assets-v1/b0f252fe-8b89-41f5-97f7-1571d9741788/the-last-of-us.jpg"
+    "posterUrl": "/the-last-of-us.jpg",
+    "backdropUrl": "/the-last-of-us.jpg"
   }
 ]
