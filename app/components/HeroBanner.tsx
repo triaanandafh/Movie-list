@@ -1,6 +1,7 @@
 import { Star, ArrowUpRight, ArrowDown } from "lucide-react";
 
 export interface Movie {
+  cast: any;
   id: string | number;
   title: string;
   type: string;
@@ -92,12 +93,12 @@ export default function HeroBanner({ movie, onSelect }: HeroBannerProps) {
         </div>
 
         {/* Featured Pick Indicator (Bottom Right) */}
-        <div className="absolute bottom-8 right-12 hidden items-center gap-3 border-l border-white/20 pl-4 text-xs text-slate-400 lg:flex">
+        {/* <div className="absolute bottom-8 right-12 hidden items-center gap-3 border-l border-white/20 pl-4 text-xs text-slate-400 lg:flex">
           <span className="text-2xl font-bold text-white">01</span>
           <span className="max-w-[80px] uppercase leading-tight tracking-wider text-slate-400">
             Featured Pick
           </span>
-        </div>
+        </div> */}
       </div>
     </section>
   );

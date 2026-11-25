@@ -1,4 +1,5 @@
 import { Clapperboard } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -11,10 +12,10 @@ export default function Navbar() {
           className="group flex items-center gap-3 transition-opacity hover:opacity-90"
         >
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 transition-colors group-hover:border-purple-500/40 group-hover:bg-purple-500/20">
-            <Clapperboard size={20} />
+            <Image src="/logo1.png" alt="Cinématique Logo" width={40} height={40} />
           </span>
           <span className="text-xl font-bold tracking-tight text-white">
-            movie<span className="text-purple-400">List</span>
+            watch<span className="text-purple-400">List</span>
           </span>
         </a>
 
@@ -30,7 +31,7 @@ export default function Navbar() {
             href="#collection" 
             className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
           >
-            My Collection
+            My List
           </a>
         </nav>
       </div>
